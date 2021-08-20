@@ -1,9 +1,14 @@
 <template>
   <div class="main container">
-    <h1 class="apptitle">Vue.js todo list</h1>
-    <p class="slogan">I was born to do this</p>
+    <h1>ToDo APP</h1>
     <div v-if="isEmpty">
-
+      <el-alert
+        title="There are not activities at this moment"
+        type="info"
+        :center="true"
+        show-icon
+        :closable="false">
+      </el-alert>
     </div>
 
     <div v-if="isWrongActivity" class="wrongNotification">
@@ -64,18 +69,5 @@
   margin-left: 10%;
   text-align: center;
   margin-top: 10px;
-}
-.apptitle{
-  text-align: center;
-  font-family: monospace;
-  margin-top: 150px;
-}
-.slogan{
-  text-align: center;
-  font-family: monospace;
-  margin-top: -10px;
-}
-body{
-  background: linear-gradient(to right, #00b4db, #0083b0);
 }
 </style>
