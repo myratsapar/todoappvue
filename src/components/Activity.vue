@@ -25,7 +25,7 @@
           </el-button>
         </template>
       </el-table-column>
-      <el-ta4ble-column
+      <el-table-column
         label="Check">
         <template slot-scope="scope">
           <el-button
@@ -35,7 +35,7 @@
             size="small">
           </el-button>
         </template>
-      </el-ta4ble-column>
+      </el-table-column>
     </el-table>
   </div>
 </template>

@@ -1,27 +1,14 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="3">
-        Activity:
-      </el-col>
-
       <el-col :span="8">
         <el-input
-          placeholder="Please input the activity"
+          placeholder="What needs to be done"
           v-model="activity"
           size="mini">
         </el-input>
       </el-col>
-      <el-col :span="3">
-        Date:
-      </el-col>
-      <el-col :span="8">
-        <el-date-picker
-          v-model="date"
-          type="date"
-          placeholder="Pick a day">
-        </el-date-picker>
-      </el-col>
+
     </el-row>
     <el-button
       type="primary"
@@ -58,7 +45,7 @@
 
           this.addActivity({activity});
           this.activity = '';
-          this.date = '';
+
 
         } else {
           this.setMessageError();
@@ -66,7 +53,7 @@
       },
 
       validateData() {
-        if (this.activity !== '' && this.date !== '') {
+        if (this.activity !== '') {
           return true;
         } else {
           return false;
@@ -75,14 +62,12 @@
 
       setMessageError() {
         let error = '';
-        if (this.activity === '' && this.date === '') {
+        if (this.activity === '') {
           error = 'The activity && the date are empty';
 
         } else {
           if (this.activity === '') {
             error = 'The activity is empty';
-          } else {
-            error = 'The date is empty';
           }
         }
 

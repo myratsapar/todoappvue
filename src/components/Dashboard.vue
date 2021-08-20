@@ -1,15 +1,8 @@
 <template>
   <div class="main container">
-    <h1>ToDo APP</h1>
-    <div v-if="isEmpty">
-      <el-alert
-        title="There are not activities at this moment"
-        type="info"
-        :center="true"
-        show-icon
-        :closable="false">
-      </el-alert>
-    </div>
+    <h1 class="apptitle">Vue.js todo list project</h1>
+    <p class="slogan">I was born to do this</p>
+
 
     <div v-if="isWrongActivity" class="wrongNotification">
       <el-alert
@@ -57,6 +50,7 @@
 
 <style>
 .main {
+  font-family: monospace;
   text-align: center;
   margin-left: 1rem;
   margin-right: 1rem;
