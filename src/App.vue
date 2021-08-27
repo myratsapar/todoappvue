@@ -11,3 +11,8 @@
   }
 
 </script>
+<style>
+*{
+  font-family: monospace;
+}
+</style>

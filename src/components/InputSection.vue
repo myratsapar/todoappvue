@@ -9,6 +9,14 @@
         </el-input>
       </el-col>
 
+    <el-date-picker
+          id="duedate"
+          v-model="date"
+          type="date"
+          size="mini"
+          placeholder="Due Date">
+      </el-date-picker>
+
     <el-button
         id="plusbutton"
         type="primary"
@@ -16,6 +24,7 @@
         circle
         @click="addActivityMethod()">
     </el-button>
+
   </div>
 </template>
 
@@ -65,13 +74,17 @@
 
 <style>
 .addbar {
-  margin-top: 20px;
-  margin-left: 460px;
+  margin-top: 9px;
+  margin-left: 240px;
+  margin-bottom: 30px;
 }
 
 #plusbutton{
-  margin-left: 75px;
-  margin-top: 10px;
+  margin-left: 50px;
+}
+
+#duedate{
+  font-family: monospace;
 
 }
 </style>

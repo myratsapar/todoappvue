@@ -8,7 +8,7 @@
       <el-table-column
         prop="name"
         label="Activities"
-        width="300"
+        :center="true"
         style="text-align: left">
       </el-table-column>
       <el-table-column

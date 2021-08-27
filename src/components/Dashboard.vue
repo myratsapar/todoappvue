@@ -67,5 +67,6 @@
 
 .slogan{
   margin-top: -10px;
+  margin-bottom: 40px;
 }
 </style>
