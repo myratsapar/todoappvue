@@ -3,7 +3,6 @@
     <h1 class="apptitle">Vue.js todo list project</h1>
     <p class="slogan">I was born to do this</p>
 
-
     <div v-if="isWrongActivity" class="wrongNotification">
       <el-alert
         :title="errorMessage"
@@ -13,25 +12,26 @@
         :closable="false">
       </el-alert>
     </div>
-
+    <Input-Section></Input-Section>
     <Activity v-if="!isEmpty"></Activity>
     <Information-Section></Information-Section>
-    <Input-Section></Input-Section>
+
   </div>
 </template>
 
 <script>
   import {mapGetters, mapActions} from 'vuex'
+  import InputSection from './InputSection'
   import Activity from './Activity'
   import InformationSection from './InformationSection'
-  import InputSection from './InputSection'
+
 
   export default {
     name: 'Dashboard',
     components: {
+      InputSection,
       Activity,
-      InformationSection,
-      InputSection
+      InformationSection
     },
     computed: {
       ...mapGetters({
@@ -63,5 +63,9 @@
   margin-left: 10%;
   text-align: center;
   margin-top: 10px;
+}
+
+.slogan{
+  margin-top: -10px;
 }
 </style>

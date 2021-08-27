@@ -1,9 +1,7 @@
 <template>
   <div>
     <div>
-      <el-row type="flex" justify="center" class="counterSection">
-
-      </el-row>
+      <el-row type="flex" justify="start" class="counterSection"> </el-row>
     </div>
   </div>
 </template>
@@ -28,8 +26,5 @@
 
 <style>
 
-.counterSection {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
+
 </style>

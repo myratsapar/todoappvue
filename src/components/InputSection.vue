@@ -1,20 +1,20 @@
 <template>
   <div>
-    <el-row>
-      <el-col :span="8">
+      <el-col :span="7">
         <el-input
+          class="addbar"
           placeholder="What needs to be done"
           v-model="activity"
           size="mini">
         </el-input>
       </el-col>
 
-    </el-row>
     <el-button
-      type="primary"
-      icon="el-icon-circle-plus-outline"
-      circle
-      @click="addActivityMethod()">
+        id="plusbutton"
+        type="primary"
+        icon="el-icon-circle-plus-outline"
+        circle
+        @click="addActivityMethod()">
     </el-button>
   </div>
 </template>
@@ -59,23 +59,19 @@
           return false;
         }
       },
-
-      setMessageError() {
-        let error = '';
-        if (this.activity === '') {
-          error = 'The activity && the date are empty';
-
-        } else {
-          if (this.activity === '') {
-            error = 'The activity is empty';
-          }
-        }
-
-        this.setErrorMessageAction({message: error});
-      },
     }
   }
 </script>
 
 <style>
+.addbar {
+  margin-top: 20px;
+  margin-left: 460px;
+}
+
+#plusbutton{
+  margin-left: 75px;
+  margin-top: 10px;
+
+}
 </style>

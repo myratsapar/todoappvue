@@ -3,12 +3,16 @@
     <el-table
       :data="activities"
       :row-class-name="tableRowColor">
+      <div class="col">left</div>
+      <div class="col text-left">inline content needs to be right aligned</div>
       <el-table-column
         prop="name"
-        label="Name">
+        label="Activities"
+        width="300"
+        style="text-align: left">
       </el-table-column>
       <el-table-column
-        label="Date">
+          label="Date">
         <template slot-scope="scope">
           <i class="el-icon-time"></i>
           <span style="margin-left: 10px">{{getDate(scope.row.date)}}</span>
@@ -26,13 +30,24 @@
         </template>
       </el-table-column>
       <el-table-column
-        label="Check">
+          label="Check">
         <template slot-scope="scope">
           <el-button
-            type="success"
-            icon="el-icon-check"
-            circle @click="completeActivity(scope.row)"
-            size="small">
+              type="success"
+              icon="el-icon-check"
+              circle @click=""
+              size="small">
+          </el-button>
+        </template>
+      </el-table-column>
+      <el-table-column
+          label="View">
+        <template slot-scope="scope">
+          <el-button
+              type="primary"
+              icon="el-icon-view"
+              circle @click="completeActivity(scope.row)"
+              size="small">
           </el-button>
         </template>
       </el-table-column>
@@ -69,7 +84,6 @@
         } else {
           return 'warning-row'
         }
-
         return '';
       },
 
@@ -78,27 +92,10 @@
       },
 
       openModal(item) {
-        const message = `This will permanently delete the activity ${item.name}. Continue?`;
-        this.$confirm(message, 'Warning', {
-          confirmButtonText: 'OK',
-          cancelButtonText: 'Cancel',
-          type: 'warning'
-        }).then(() => {
           this.deleteActivity({activity: item})
-            .then(() => {
-              this.$message({
-                type: 'success',
-                message: 'Delete completed'
-              });
-            });
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: 'Delete canceled'
-          });
-        });
+        }
       }
-    }
+
   }
 </script>
 
@@ -108,7 +105,7 @@ div.cell {
 }
 
 .el-table .warning-row {
-  background: oldlace;
+  background: white;
 }
 
 .el-table .success-row {
