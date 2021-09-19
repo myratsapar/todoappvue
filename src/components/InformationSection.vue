@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div>
-      <el-row type="flex" justify="start" class="counterSection"> </el-row>
+    <div class="elrow">
+      <el-row type="flex" justify="start" class="counterSection" width = "50px"> </el-row>
     </div>
   </div>
 </template>
@@ -25,6 +25,8 @@
 </script>
 
 <style>
-
+.elrow {
+  width: 10%;
+}
 
 </style>

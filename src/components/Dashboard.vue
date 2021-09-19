@@ -52,10 +52,11 @@
 .main {
   font-family: monospace;
   text-align: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
 }
+
 
 .wrongNotification {
   margin-bottom: 0.2rem;

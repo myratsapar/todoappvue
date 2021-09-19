@@ -3,7 +3,7 @@
       <el-col :span="7">
         <el-input
           class="addbar"
-          placeholder="What needs to be done"
+          placeholder="Whats on your mind"
           v-model="activity"
           size="mini">
         </el-input>
@@ -19,7 +19,7 @@
 
     <el-button
         id="plusbutton"
-        type="primary"
+        type="warning"
         icon="el-icon-circle-plus-outline"
         circle
         @click="addActivityMethod()">

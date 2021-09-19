@@ -1,25 +1,28 @@
 <template>
-  <div>
+  <div class="tableall">
     <el-table
       :data="activities"
-      :row-class-name="tableRowColor">
-      <div class="col">left</div>
-      <div class="col text-left">inline content needs to be right aligned</div>
+      :row-class-name="tableRowColor"
+      >
+
       <el-table-column
-        prop="name"
-        label="Activities"
-        :center="true"
-        style="text-align: left">
+          prop="name"
+          label="Activities"
+          class="actcolumn"
+          width="400">
       </el-table-column>
+
       <el-table-column
-          label="Date">
+          label="Date"
+          class="datecolumn">
         <template slot-scope="scope">
-          <i class="el-icon-time"></i>
+          <i class="el-icon-date"></i>
           <span style="margin-left: 10px">{{getDate(scope.row.date)}}</span>
         </template>
       </el-table-column>
       <el-table-column
-        label="Remove">
+        label="Remove"
+        class="remcolumn">
         <template slot-scope="scope">
           <el-button type="danger"
             icon="el-icon-delete"
@@ -30,23 +33,26 @@
         </template>
       </el-table-column>
       <el-table-column
-          label="Check">
+          label="Check"
+          class="checkcolumn">
         <template slot-scope="scope">
           <el-button
-              type="success"
-              icon="el-icon-check"
-              circle @click=""
-              size="small">
+            type="success"
+            icon="el-icon-check"
+            @click="completeActivity(scope.row)"
+            circle
+            size="small">
           </el-button>
         </template>
       </el-table-column>
       <el-table-column
-          label="View">
+          label="View"
+      class="viewcolumn">
         <template slot-scope="scope">
           <el-button
               type="primary"
               icon="el-icon-view"
-              circle @click="completeActivity(scope.row)"
+              circle @click=""
               size="small">
           </el-button>
         </template>
@@ -92,7 +98,14 @@
       },
 
       openModal(item) {
+        const message = `This action will permanently remove the activity ${item.name}. Continue?`;
+        this.$confirm(message, 'Caution', {
+          confirmButtonText: 'CONFIRM',
+          cancelButtonText: 'Not yet',
+          type: 'danger'
+        }).then(() => {
           this.deleteActivity({activity: item})
+        })
         }
       }
 
@@ -100,8 +113,13 @@
 </script>
 
 <style>
-div.cell {
-  text-align: center;
+.tableall{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.el-table .actcoulm {
+  text-align: left;
+  padding-right: 100px;
 }
 
 .el-table .warning-row {
@@ -110,5 +128,11 @@ div.cell {
 
 .el-table .success-row {
   background: #f0f9eb;
+}
+
+
+
+div .cell{
+  text-align: center;
 }
 </style>
